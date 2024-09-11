@@ -28,8 +28,21 @@ body {
   background-color: #303030;
 }
 
+.op-btn:hover {
+  background-color: #ff6600;
+}
+
+.num-btn:hover {
+  background-color: #ffffff;
+  color: #303030;
+}
+
 #equals {
   background-color: #ff6600;
+}
+#equals:hover {
+  background-color: #ffffff;
+  color: #ff6600;
 }
 
 #result-display {
