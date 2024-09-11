@@ -1,0 +1,50 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  border: 6px solid #505050;
+  border-radius: 20px;
+  width: 330px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #000000;
+}
+
+#display {
+  font-size: 30px;
+  text-align: end;
+  margin: 90px 20px 0px;
+}
+#buttons {
+  margin: 0;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.op-btn {
+  background-color: #303030;
+}
+
+#equals {
+  background-color: #ff6600;
+}
+
+#result-display {
+  font-size: 50px;
+  color: #ffffff;
+}
+
+button {
+  font-size: 25px;
+  border-radius: 50%;
+  border: none;
+  background-color: #151515;
+  color: #ffffff;
+  font-weight: bold;
+  width: 65px;
+  height: 65px;
+  margin: 5px;
+}
