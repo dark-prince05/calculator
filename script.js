@@ -11,7 +11,7 @@ let modulus = (a, b) => a % b;
 let operate = (num1, operator, num2) => {
   switch (operator) {
     case "+":
-      return addition(num1, num2).toFixed(2);
+      return addition(num1, num2);
     case "-":
       return subtraction(num1, num2);
     case "*":
@@ -83,4 +83,48 @@ equals.addEventListener("click", () => {
     display.textContent = operate(firstNum, operator, secondNum);
   }
   operator = "";
+});
+
+document.addEventListener("keydown", (e) => {
+  if ((e.key >= 0 && e.key <= 9) || e.key === ".") {
+    let dotEnable = false;
+    if (content) {
+      display.textContent = "";
+      content = false;
+    }
+    if (display.textContent.includes(".")) {
+      dotEnable = true;
+    }
+    if (e.key === "." && dotEnable) {
+      e.preventDefault();
+    } else {
+      display.textContent += e.key;
+    }
+  } else if (
+    e.key == "+" ||
+    e.key == "-" ||
+    e.key == "*" ||
+    e.key == "/" ||
+    e.key == "%"
+  ) {
+    if (operator !== "") {
+      secondNum = +display.textContent;
+      display.textContent = operate(firstNum, operator, secondNum);
+      firstNum = +display.textContent;
+      operator = e.key;
+      content = true;
+    } else {
+      firstNum = +display.textContent;
+      operator = e.key;
+      content = true;
+    }
+  } else if (e.key == "Enter") {
+    secondNum = +display.textContent;
+    if (operator !== "") {
+      display.textContent = operate(firstNum, operator, secondNum);
+    }
+    operator = "";
+  } else if (e.key === "Backspace") {
+    display.textContent = display.textContent.slice(0, -1);
+  }
 });
