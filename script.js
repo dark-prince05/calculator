@@ -11,7 +11,7 @@ let modulus = (a, b) => a % b;
 let operate = (num1, operator, num2) => {
   switch (operator) {
     case "+":
-      return addition(num1, num2);
+      return addition(num1, num2).toFixed(2);
     case "-":
       return subtraction(num1, num2);
     case "*":
@@ -36,12 +36,18 @@ const display = document.querySelector("#result-display");
 const numBtns = document.querySelectorAll(".num-btn");
 const opBtns = document.querySelectorAll(".op-btn");
 const equals = document.querySelector("#equals");
+const dot = document.querySelector(".dot");
 
 numBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     if (content) {
       display.textContent = "";
       content = false;
+    }
+    if (e.target.id === ".") {
+      dot.disabled = true;
+    } else if (!display.textContent.includes(".")) {
+      dot.disabled = false;
     }
     display.textContent += e.target.id;
   });
