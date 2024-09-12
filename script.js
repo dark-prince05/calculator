@@ -20,7 +20,7 @@ let operate = (num1, operator, num2) => {
       if (num2 === 0) {
         return "hmm..trying to divide by 0";
       } else {
-        return division(num1, num2).toFixed(5);
+        return Math.floor(division(num1, num2) * 100) / 100;
       }
     case "%":
       return modulus(num1, num2);
