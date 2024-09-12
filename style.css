@@ -5,9 +5,13 @@ body {
 }
 
 #container {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
   border: 6px solid #505050;
   border-radius: 20px;
   width: 330px;
+  height: 600px;
   margin: auto;
   margin-top: 20px;
   background-color: #000000;
@@ -15,20 +19,30 @@ body {
 
 #display {
   font-size: 30px;
-  text-align: end;
-  margin: 90px 20px 0px;
+  align-self: end;
+  padding: 0px 20px;
 }
 #buttons {
   margin: 0;
-  margin-top: 50px;
+  padding-top: 50px;
   text-align: center;
 }
 
-.op-btn {
+.op-btn,
+.clear-btn,
+.erase-btn {
   background-color: #303030;
 }
 
 .op-btn:hover {
+  background-color: #ff6600;
+}
+
+.clear-btn:hover {
+  background-color: #ff6600;
+}
+
+.erase-btn:hover {
   background-color: #ff6600;
 }
 
